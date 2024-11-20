@@ -18,7 +18,38 @@ edad = 'hola';
 
 //* =========================================
 //* Arrays: 
+//* Hay dos maneras de tipar un array, pero las dos son igual de validad: 
 
-const frutas: string[] = ['manzana', 'fresa', 'platano']
-const nums1: Array<number> = [2, 4, 5, 6]
+const frutas1: string[] = ['manzana', 'fresa', 'platano']
+const frutas2: Array<string> = ['manzana', 'fresa', 'platano']
+
 const nums2: number[] = [2, 4, 5, 6]
+const nums1: Array<number> = [2, 4, 5, 6]
+
+
+//! any --> es un tipo que solo existe en ts y significa que puede tener cualquier tipo de dato
+//* hay que evitarlos a TODA COSTA
+
+let valor: any = 37
+valor = 'hola' // no se queja porque has puesto any arriba, pero solo en casos extremos debes usarlo
+
+
+
+
+//* =========================================
+//* Funciones: 
+
+
+function sumar (num1: number, num2: number):number {
+    return num1 + num2
+}
+
+sumar(5, 6)
+
+//* Parametros opcionales?
+
+function saludar (nombre: string, apellido: string = '') {
+    console.log(`Hola ${nombre}` + apellido? `${apellido}`: '');
+}
+
+console.log(saludar('osian'));
